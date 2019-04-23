@@ -12,9 +12,9 @@
         Validator.Required("You must specify a confirm password."),
         Validator.EqualsTo("password", "The new password and confirmation password do not match."));
 
-    //if (!ReCaptcha.Validate("PRIVATE_KEY")) {
-    //    ModelState.AddFormError("Captcha response was not correct.");
-    //}
+    if (!ReCaptcha.Validate("6Lc_wZ8UAAAAAFgkW2w3UCeyMZxZGjqXf4dPQe7K")) {
+        ModelState.AddFormError("Captcha response was not correct.");
+    }
         
     if (IsPost && Validation.IsValid() && ModelState.IsValid) 
     {
@@ -87,7 +87,7 @@
                     replace 'PRIVATE_KEY' with your private key.</p>
                     <p>Register for reCAPTCHA keys at <a href="http://recaptcha.net" title="reCAPTCHA.net">reCAPTCHA.net</a>.</p>
                 </div>
-                @*@ReCaptcha.GetHtml("PUBLIC_KEY", theme: "white")*@
+                @ReCaptcha.GetHtml("6Lc_wZ8UAAAAABlaSGN-0GBtouqjF5sU-zPz8N-G", theme: "white")
             </li>
         </ol>
         <p class="form-actions">
